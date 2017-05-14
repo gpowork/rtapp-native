@@ -39,15 +39,15 @@ public class MainActivityTest {
         assertFalse("If there are empty records then must return false", mainActivity.checkIfUserAuthorized());
 
         Map<String, Object> map = new HashMap<>();
-        map.put(GlobalSettings.USER_LOGIN, null);
-        map.put(GlobalSettings.USER_HASHED_PASSWORD, null);
+        map.put(GlobalSettings.KEY_USER_LOGIN, null);
+        map.put(GlobalSettings.KEY_USER_HASHED_PASSWORD, null);
 
         when(mainActivity.retrieveDataFromStorage())
                 .thenReturn(map);
         assertFalse("If there are empty records then must return false", mainActivity.checkIfUserAuthorized());
 
-        map.put(GlobalSettings.USER_LOGIN, "login");
-        map.put(GlobalSettings.USER_HASHED_PASSWORD, "hash");
+        map.put(GlobalSettings.KEY_USER_LOGIN, "login");
+        map.put(GlobalSettings.KEY_USER_HASHED_PASSWORD, "hash");
 
         assertTrue("If there are empty records then must return true", mainActivity.checkIfUserAuthorized());
     }

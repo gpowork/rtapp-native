@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected boolean checkIfUserAuthorized() {
         Map<String, Object> settings = retrieveDataFromStorage();
-        if (settings != null && settings.get(GlobalSettings.USER_LOGIN) != null && settings.get(GlobalSettings.USER_HASHED_PASSWORD) != null)
+        if (settings != null && settings.get(GlobalSettings.KEY_USER_LOGIN) != null && settings.get(GlobalSettings.KEY_USER_HASHED_PASSWORD) != null)
             return true;
         return false;
     }
@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences settings = getPreferences(Context.MODE_PRIVATE);
         if (settings != null) {
             Map<String, Object> map = new HashMap<>();
-            map.put(GlobalSettings.USER_LOGIN, settings.getString(GlobalSettings.USER_LOGIN, null));
-            map.put(GlobalSettings.USER_HASHED_PASSWORD, settings.getString(GlobalSettings.USER_HASHED_PASSWORD, null));
-            map.put(GlobalSettings.SERVER_URL, settings.getString(GlobalSettings.SERVER_URL, null));
+            map.put(GlobalSettings.KEY_USER_LOGIN, settings.getString(GlobalSettings.KEY_USER_LOGIN, null));
+            map.put(GlobalSettings.KEY_USER_HASHED_PASSWORD, settings.getString(GlobalSettings.KEY_USER_HASHED_PASSWORD, null));
+            map.put(GlobalSettings.KEY_SERVER_URL, settings.getString(GlobalSettings.KEY_SERVER_URL, null));
             return map;
         }
         return null;

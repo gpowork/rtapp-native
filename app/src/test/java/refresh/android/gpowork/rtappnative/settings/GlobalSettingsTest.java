@@ -20,8 +20,10 @@ public class GlobalSettingsTest {
     @Test
     public void checkIfExist() {
         assertNotNull(globalSettings);
-        assertNotNull("Static SERVER URL", globalSettings.SERVER_URL);
-        assertNotNull("User loging name", globalSettings.USER_LOGIN);
-        assertNotNull("User hashed password", globalSettings.USER_HASHED_PASSWORD);
+        assertNotNull("Static SERVER URL", globalSettings.getServerUrl());
+        assertNotNull("Static KEY SERVER URL", globalSettings.KEY_SERVER_URL);
+        assertNotNull("User KEY loging name", globalSettings.KEY_USER_LOGIN);
+        assertNotNull("User KEY hashed password", globalSettings.KEY_USER_HASHED_PASSWORD);
+        assertNotNull("Get Login URL", globalSettings.getLoginURL());
     }
 }
