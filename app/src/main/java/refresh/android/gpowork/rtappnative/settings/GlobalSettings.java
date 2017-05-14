@@ -1,4 +1,4 @@
-package refresh.android.gpowork.rtappnative.refresh.android.gpowork.rtappnative.settings;
+package refresh.android.gpowork.rtappnative.settings;
 
 /**
  * Created by gpowork on 11/05/2017.

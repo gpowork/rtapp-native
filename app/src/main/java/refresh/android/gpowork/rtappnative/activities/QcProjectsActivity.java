@@ -1,4 +1,4 @@
-package refresh.android.gpowork.rtappnative.refresh.android.gpowork.rtappnative.activities;
+package refresh.android.gpowork.rtappnative.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

@@ -8,11 +8,10 @@ import android.os.Bundle;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
-import refresh.android.gpowork.rtappnative.refresh.android.gpowork.rtappnative.activities.LoginActivity;
-import refresh.android.gpowork.rtappnative.refresh.android.gpowork.rtappnative.activities.QcProjectsActivity;
-import refresh.android.gpowork.rtappnative.refresh.android.gpowork.rtappnative.settings.GlobalSettings;
+import refresh.android.gpowork.rtappnative.activities.LoginActivity;
+import refresh.android.gpowork.rtappnative.activities.QcProjectsActivity;
+import refresh.android.gpowork.rtappnative.settings.GlobalSettings;
 
 public class MainActivity extends AppCompatActivity {
 

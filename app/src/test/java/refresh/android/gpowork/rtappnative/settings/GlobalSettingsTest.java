@@ -1,11 +1,11 @@
-package refresh.android.gpowork.rtappnative.refresh.android.gpowork.rtappnative.settings;
+package refresh.android.gpowork.rtappnative.settings;
 
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+
+import refresh.android.gpowork.rtappnative.settings.GlobalSettings;
 
 import static junit.framework.Assert.assertNotNull;
 

@@ -1,24 +1,19 @@
 package refresh.android.gpowork.rtappnative;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatDelegate;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import refresh.android.gpowork.rtappnative.refresh.android.gpowork.rtappnative.settings.GlobalSettings;
+import refresh.android.gpowork.rtappnative.settings.GlobalSettings;
 
 import static junit.framework.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.ArgumentMatchers.anyObject;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
