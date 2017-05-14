@@ -1,6 +1,9 @@
 package refresh.android.gpowork.rtappnative;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,6 +18,8 @@ import refresh.android.gpowork.rtappnative.refresh.android.gpowork.rtappnative.s
 
 import static junit.framework.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.ArgumentMatchers.anyObject;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -50,5 +55,29 @@ public class MainActivityTest {
         map.put(GlobalSettings.USER_HASHED_PASSWORD, "hash");
 
         assertTrue("If there are empty records then must return true", mainActivity.checkIfUserAuthorized());
+    }
+
+    @Test
+    public void checkIfRunDispatcher() {
+        // Check if it calls checkIfUserAuthorized
+        mainActivity.runDispatcher();
+        verify(mainActivity).checkIfUserAuthorized();
+    }
+
+    @Test
+    public void checkIfOpenLoginPage() {
+        // Check if System show login page when checkIfUserAuthorized returns false
+        when(mainActivity.checkIfUserAuthorized())
+                .thenReturn(false);
+        mainActivity.runDispatcher();
+        verify(mainActivity).startLoginActivity();
+    }
+
+    @Test
+    public void checkIfOpenQCHomePage(){
+        when(mainActivity.checkIfUserAuthorized())
+                .thenReturn(true);
+        mainActivity.runDispatcher();
+        verify(mainActivity).startQcProjectsPage();
     }
 }

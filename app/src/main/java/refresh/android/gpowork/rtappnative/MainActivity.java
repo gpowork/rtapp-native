@@ -1,6 +1,7 @@
 package refresh.android.gpowork.rtappnative;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+import refresh.android.gpowork.rtappnative.refresh.android.gpowork.rtappnative.activities.LoginActivity;
+import refresh.android.gpowork.rtappnative.refresh.android.gpowork.rtappnative.activities.QcProjectsActivity;
 import refresh.android.gpowork.rtappnative.refresh.android.gpowork.rtappnative.settings.GlobalSettings;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +20,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        runDispatcher();
+    }
+
+    protected void runDispatcher() {
+        if (checkIfUserAuthorized()) {
+            startQcProjectsPage();
+        } else {
+            startLoginActivity();
+        }
+    }
+
+    protected void startLoginActivity() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    protected void startQcProjectsPage(){
+        Intent intent = new Intent(this, QcProjectsActivity.class);
+        startActivity(intent);
     }
 
     protected boolean checkIfUserAuthorized() {
